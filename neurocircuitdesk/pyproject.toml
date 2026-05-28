@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neurocircuitdesk"
+version = "0.1.0"
+description = "Programmable ontology for composing, executing, and visualising executable neural circuits from connectomic graph abstractions"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Yiyi Bu"}]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "plotly>=5.0",
+    "networkx>=3.0",
+]
+
+[project.optional-dependencies]
+mlx = ["mlx>=0.18"]
+
+[tool.setuptools]
+packages = ["neurocircuitdesk", "neurocircuitdesk.libs"]
+
+[tool.setuptools.package-dir]
+neurocircuitdesk = "."
+"neurocircuitdesk.libs" = "libs"
+
+[tool.setuptools.package-data]
+"neurocircuitdesk.libs" = ["jsons/*.json"]

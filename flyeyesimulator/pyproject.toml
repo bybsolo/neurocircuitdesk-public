@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flyeyesimulator"
+version = "0.1.0"
+description = "Compound-eye optical simulator with static and physics-driven active sampling on spherical geometry"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [{name = "Yiyi Bu"}]
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "plotly>=5.0",
+    "matplotlib>=3.6",
+    "pandas>=2.0",
+    "tqdm>=4.60",
+]
+
+[project.optional-dependencies]
+# CuPy is the primary GPU backend. Pick the wheel matching your CUDA toolkit.
+cupy-cuda12 = ["cupy-cuda12x"]
+cupy-cuda11 = ["cupy-cuda11x"]
+# Apple Silicon / MLX backend.
+mlx = ["mlx>=0.18"]
+
+[tool.setuptools]
+packages = ["flyeyesimulator"]
+
+[tool.setuptools.package-dir]
+flyeyesimulator = "."

@@ -1,0 +1,49 @@
+# Byte-compiled / packaging
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+build/
+dist/
+.eggs/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+
+# Generated outputs
+viz_outputs/
+motion_benchmark_outputs/
+benchmark/outputs/
+docs/demos/outputs/
+
+# Large data blobs — not committed; fetch out of band
+*.h5
+*.mat
+# Exception: small demo data shipped with the repo
+!docs/demos/data/highway.h5
+!docs/demos/data/image1.mat
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local Claude state
+.claude/
+
+# Agent skill guides — internal, not yet public
+docs/agent_skills/
+
+# Secrets — must never be committed
+.env
+.env.*
+!.env.example
